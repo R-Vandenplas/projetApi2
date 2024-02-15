@@ -6,9 +6,12 @@ import java.util.Objects;
  * classe Coureur
  * @author Romain Vandenplas
  * @version 1.0
-
  */
 public class Coureur {
+    /**
+     * id du coureur
+     */
+    public int id;
     /**
      * matricule du coureur
      */
@@ -117,23 +120,23 @@ public class Coureur {
         this.dateNaiss = dateNaiss;
     }
     /**
-     * methode equals basée le matricule
+     * methode equals basée l'id
      * @param o
-     * @return si les matricules sont egaux ou non
+     * @return si les id sont egaux ou non
      */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Coureur coureur = (Coureur) o;
-        return Objects.equals(matricule, coureur.matricule);
+        return id == coureur.id;
     }
     /**
-     * methode hashCode basée sur le matricule
+     * methode hashCode basée sur l'id
      * @return le hashcode du coureur
      */
     @Override
     public int hashCode() {
-        return Objects.hash(matricule);
+        return Objects.hash(id);
     }
 }

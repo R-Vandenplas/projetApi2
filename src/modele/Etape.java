@@ -12,6 +12,10 @@ import java.util.Objects;
  */
 public class Etape {
     /**
+     * id de l'etape
+     */
+    private int id;
+    /**
      * numero de l'etape
      */
     private int numero;
@@ -158,7 +162,7 @@ public class Etape {
         this.course = course;
     }
     /**
-     * methode equals basée sur le numero et la course
+     * methode equals basée sur l'id
      * @param o
      * @return égalité ou non
      */
@@ -167,14 +171,14 @@ public class Etape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Etape etape = (Etape) o;
-        return numero == etape.numero && Objects.equals(course, etape.course);
+        return id== etape.id;
     }
     /**
-     * methode hashCode basée sur le numero et la course
+     * methode hashCode basée sur l'id
      * @return hashCode
      */
     @Override
     public int hashCode() {
-        return Objects.hash(numero, course);
+        return Objects.hash(id);
     }
 }

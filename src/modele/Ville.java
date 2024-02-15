@@ -11,6 +11,10 @@ import java.util.Objects;
  */
 public class Ville {
     /**
+     * id de la ville
+     */
+    private int id;
+    /**
      * nom de la ville
      */
     private String nom;
@@ -97,7 +101,7 @@ public class Ville {
         this.pays = pays;
     }
     /**
-     * methode equals basée sur la latitude et la longitude
+     * methode equals basée sur l'id
      * @param o
      * @return égalité ou non
      */
@@ -106,14 +110,14 @@ public class Ville {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ville ville = (Ville) o;
-        return Double.compare(latitude, ville.latitude) == 0 && Double.compare(longitude, ville.longitude) == 0;
+        return id == ville.id;
     }
     /**
-     * methode hashCode basée sur la latitude et la longitude
+     * methode hashCode basée sur l'id
      * @return hashCode
      */
     @Override
     public int hashCode() {
-        return Objects.hash(latitude, longitude);
+        return Objects.hash( id);
     }
 }

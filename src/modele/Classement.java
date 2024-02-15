@@ -1,6 +1,8 @@
 package modele;
 
 
+import java.util.Objects;
+
 /**
  * classe Classement
  * @author Romain Vandenplas
@@ -8,6 +10,10 @@ package modele;
  * @see Coureur
  */
 public class Classement {
+    /**
+     * id du classement
+     */
+    private int id;
     /**
      * place du coureur
      */
@@ -75,5 +81,25 @@ public class Classement {
         this.coureur = coureur;
     }
 
+    /**
+     * equals sur l'id
+     * @param o
+     * @return si les id sont égaux
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Classement that = (Classement) o;
+        return id == that.id;
+    }
 
+    /**
+     * hashcode sur l'id
+     * @return hashcode
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
