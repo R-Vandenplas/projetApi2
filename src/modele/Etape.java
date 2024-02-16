@@ -11,6 +11,7 @@ import java.util.Objects;
  * @see Course
  */
 public class Etape {
+    //<--------------attributs--------------->
     /**
      * id de l'etape
      */
@@ -43,7 +44,7 @@ public class Etape {
      * course
      */
     private Course course;
-
+    //<--------------constructeurs--------------->
     /**
      * constructeur de la classe etape
      * @param numero
@@ -63,6 +64,7 @@ public class Etape {
         this.villeArrivee = villeArrivee;
         this.course = course;
     }
+    //<--------------getters et setters--------------->
     /**
      * getter numero
      * @return numero
@@ -166,6 +168,7 @@ public class Etape {
      * @param o
      * @return égalité ou non
      */
+    //<--------------methodes equals et hashcode--------------->
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

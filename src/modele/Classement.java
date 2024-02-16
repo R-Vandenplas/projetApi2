@@ -10,6 +10,7 @@ import java.util.Objects;
  * @see Coureur
  */
 public class Classement {
+    //<--------------attributs--------------->
     /**
      * id du classement
      */
@@ -25,8 +26,8 @@ public class Classement {
     /**
      * coureur
      */
-    Coureur coureur;
-
+    private Coureur coureur;
+    //<--------------constructeurs--------------->
     /**
      * constructeur de la classe classement
      * @param place
@@ -38,6 +39,7 @@ public class Classement {
         this.gain = gain;
         this.coureur = coureur;
     }
+    //<--------------getters et setters--------------->
     /**
      * getter place
      * @return place
@@ -86,6 +88,7 @@ public class Classement {
      * @param o
      * @return si les id sont égaux
      */
+    //<--------------methodes equals et hashcode--------------->
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

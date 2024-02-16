@@ -8,6 +8,7 @@ import java.util.Objects;
  * @version 1.0
  */
 public class Coureur {
+    //<--------------attributs--------------->
     /**
      * id du coureur
      */
@@ -32,7 +33,7 @@ public class Coureur {
      * date de naissance du coureur
      */
     private Date dateNaiss;
-
+    //<--------------constructeurs--------------->
     /**
      * constructeur de la classe coureur
      * @param matricule
@@ -48,6 +49,7 @@ public class Coureur {
         this.nationalite = nationalite;
         this.dateNaiss = dateNaiss;
     }
+    //<--------------getters et setters--------------->
     /**
      * getter matricule
      * @return matricule
@@ -124,6 +126,7 @@ public class Coureur {
      * @param o
      * @return si les id sont egaux ou non
      */
+    //<--------------methodes equals et hashcode--------------->
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

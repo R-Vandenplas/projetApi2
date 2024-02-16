@@ -1,5 +1,7 @@
 package modele;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -11,6 +13,7 @@ import java.util.Objects;
  * @see Etape
  */
 public class Course {
+    //<--------------attributs--------------->
     /**
      * id de la course
      */
@@ -23,7 +26,7 @@ public class Course {
     /**
      * gain de la course
      */
-    private float priceMoeny;
+    private BigDecimal priceMoney;
     /**
      * date de debut de la course
      */
@@ -45,25 +48,45 @@ public class Course {
      * liste des etapes
      */
     List<Etape> etapes;
+    //<--------------constructeurs--------------->
     /**
      * constructeur de la classe course
      * @param nom
-     * @param priceMoeny
+     * @param priceMoney
      * @param dateDebut
      * @param dateFin
      * @param kmTotal
      */
-    public Course(String nom, float priceMoeny, Date dateDebut, Date dateFin, int kmTotal) {
+    public Course(String nom, BigDecimal priceMoney, Date dateDebut, Date dateFin, int kmTotal) {
         this.nom = nom;
-        this.priceMoeny = priceMoeny;
+        this.priceMoney = priceMoney;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.kmTotal = kmTotal;
     }
     /**
+     * constructeur de la classe course avec id
+     * @param id
+     * @param nom
+     * @param priceMoney
+     * @param dateDebut
+     * @param dateFin
+     * @param kmTotal
+     */
+    public Course(int id, String nom, BigDecimal priceMoney, Date dateDebut, Date dateFin, int kmTotal) {
+        this.id = id;
+        this.nom = nom;
+        this.priceMoney = priceMoney;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.kmTotal = kmTotal;
+    }
+    //<--------------getters & setters--------------->
+    /**
      * getter nom
      * @return nom
      */
+
     public String getNom() {
         return nom;
     }
@@ -75,18 +98,18 @@ public class Course {
         this.nom = nom;
     }
     /**
-     * getter priceMoeny
-     * @return priceMoeny
+     * getter priceMoney
+     * @return priceMoney
      */
-    public float getPriceMoeny() {
-        return priceMoeny;
+    public BigDecimal getPriceMoney() {
+        return priceMoney;
     }
     /**
-     * setter priceMoeny
-     * @param priceMoeny
+     * setter priceMoney
+     * @param priceMoney
      */
-    public void setPriceMoeny(float priceMoeny) {
-        this.priceMoeny = priceMoeny;
+    public void setPriceMoney(BigDecimal priceMoney) {
+        this.priceMoney = priceMoney;
     }
     /**
      * getter dateDebut
@@ -158,11 +181,13 @@ public class Course {
     public void setEtapes(List<Etape> etapes) {
         this.etapes = etapes;
     }
+    //<--------------methodes equals et hashcode--------------->
     /**
      * methode equals basée sur l'id
      * @param o
      * @return égalité ou non
      */
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -178,4 +203,142 @@ public class Course {
     public int hashCode() {
         return Objects.hash(id);
     }
+    //<------------------methodes développer------------------->
+
+    /**
+     * Retourne la liste des coureurs avec leur place et leur gain
+     * @return liste des coureurs avec leur place et leur gain
+     */
+    public List<Classement> listeCoureursPlaceGain(){
+        return classement;
+    }
+    /**
+     * Retourne le gain total de la course
+     * @return gain total de la course
+     */
+    public BigDecimal gainTotal(){
+        return priceMoney;
+    }
+    /**
+     * Retourne le coureur vainqueur en cherchant dans le classement le coureur avec la place 1
+     * @return coureur vainqueur
+     */
+    public Coureur vainqueur(){
+        for(Classement c : classement){
+            if(c.getPlace() == 1){
+                return c.getCoureur();
+            }
+        }
+        throw new RuntimeException("Pas de vainqueur dans le classement");
+    }
+
+    /**
+     * Ajoute un coureur au classement avec une place et un gain à 0
+     * @param c coureur à ajouter
+     */
+    public void addCoureur(Coureur c){
+        classement.add(new Classement(0,0,c));
+    }
+    /**
+     * Supprime un coureur du classement en comparant les coureurs avec equals
+     * @param c coureur à supprimer
+     */
+    public void supCoureur(Coureur c){
+        for(Classement cl : classement){
+            if(cl.getCoureur().equals(c)){
+                classement.remove(cl);
+            }
+        }
+    }
+    /**
+     * Permet de donner le classement d'un coureur avec sa place et son gain si il n'a pas déjà de classement
+     * @param c coureur à modifier
+     * @param place nouvelle place
+     * @param gain nouveau gain
+     */
+    public void resultat(Coureur c, int place, float gain){
+        for(Classement cl : classement){
+            if(cl.getCoureur().equals(c)){
+                if(cl.getPlace()==0){
+                    cl.setPlace(place);
+                    cl.setGain(gain);
+                }
+                else
+                    throw new RuntimeException("Le coureur a déjà un classement");
+
+            }
+        }
+    }
+    /**
+     * Permet de modifier le classement d'un coureur avec sa place et son gain, le coureur doit déjà avoir un classement
+     * @param c coureur à modifier
+     * @param place nouvelle place
+     * @param gain nouveau gain
+     */
+    public void modif(Coureur c, int place, float gain){
+        for(Classement cl : classement){
+            if(cl.getCoureur().equals(c)){
+                if(cl.getPlace()!=0){
+                    cl.setPlace(place);
+                    cl.setGain(gain);
+                }
+                else
+                    throw new RuntimeException("Le coureur n'a pas de classement");
+
+            }
+        }
+    }
+
+
+    /**
+     * Ajoute une étape à la liste des étapes
+     * @param e étape à ajouter
+     */
+    public void addEtape(Etape e){
+        getEtapes().add(e);
+    }
+    /**
+     * Supprime une étape de la liste des étapes en comparant les étapes avec equals
+     * @param e étape à supprimer
+     */
+    public void supEtape(Etape e){
+        for(Etape et : etapes){
+            if(et.equals(e)){
+                etapes.remove(et);
+            }
+        }
+    }
+    /**
+     * Retourne la liste des villes en affichant une seule fois chaque ville
+     * @return liste des villes de la course
+     */
+    public List<Ville> listeVilles(){
+        List<Ville> villes = new ArrayList<>();
+        for(Etape e : etapes){
+            if(!villes.contains(e.getVilleDepart())){
+                villes.add(e.getVilleDepart());
+            }
+            if(!villes.contains(e.getVilleArrivee())){
+                villes.add(e.getVilleArrivee());
+            }
+
+        }
+        return villes;
+    }
+
+    /**
+     * verifie si tout les coureurs ont un classement différent de 0 donc si ils ont participé à la course
+     * @return true ou false true si tout les coureurs ont un classement différent de 0 false si un cours n'a pas de classement
+     */
+    public boolean classmentComplet(){
+        for(Classement c : classement){
+            if(c.getPlace() == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 }
+

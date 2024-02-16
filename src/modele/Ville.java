@@ -10,6 +10,7 @@ import java.util.Objects;
  * @see Etape
  */
 public class Ville {
+    //<--------------attributs--------------->
     /**
      * id de la ville
      */
@@ -30,13 +31,13 @@ public class Ville {
      * pays de la ville
      */
     private String pays;
-
+    //<--------------constructeurs--------------->
     /**
-     * constructeur de la classe ville
-     * @param nom
-     * @param latitude
-     * @param longitude
-     * @param pays
+     * constructeur de la classe ville sans id
+     * @param nom nom de la ville
+     * @param latitude latitude de la ville
+     * @param longitude longitude de la ville
+     * @param pays pays de la ville
      */
     public Ville(String nom, double latitude, double longitude, String pays) {
         this.nom = nom;
@@ -44,6 +45,23 @@ public class Ville {
         this.longitude = longitude;
         this.pays = pays;
     }
+
+    /**
+     * constructeur de la classe ville avec id
+     * @param id id de la ville
+     * @param nom nom de la ville
+     * @param latitude latitude de la ville
+     * @param longitude longitude de la ville
+     * @param pays pays de la ville
+     */
+    public Ville(int id, String nom, double latitude, double longitude, String pays) {
+        this.id = id;
+        this.nom = nom;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.pays = pays;
+    }
+    //<--------------getters et setters--------------->
     /**
      * getter nom
      * @return nom
@@ -100,6 +118,7 @@ public class Ville {
     public void setPays(String pays) {
         this.pays = pays;
     }
+    //<--------------equals et hashCode--------------->
     /**
      * methode equals basée sur l'id
      * @param o
