@@ -1,5 +1,6 @@
 package modele;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 /**
@@ -32,7 +33,7 @@ public class Coureur {
     /**
      * date de naissance du coureur
      */
-    private Date dateNaiss;
+    private LocalDate dateNaiss;
     //<--------------constructeurs--------------->
     /**
      * constructeur de la classe coureur
@@ -42,7 +43,25 @@ public class Coureur {
      * @param nationalite
      * @param dateNaiss
      */
-    public Coureur(String matricule, String nom, String prenom, String nationalite, Date dateNaiss) {
+    public Coureur(String matricule, String nom, String prenom, String nationalite, LocalDate dateNaiss) {
+        this.matricule = matricule;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.nationalite = nationalite;
+        this.dateNaiss = dateNaiss;
+    }
+
+    /**
+     * constructeur de la classe coureur avec id
+     * @param id
+     * @param matricule
+     * @param nom
+     * @param prenom
+     * @param nationalite
+     * @param dateNaiss
+     */
+    public Coureur(int id, String matricule, String nom, String prenom, String nationalite, LocalDate dateNaiss) {
+        this.id = id;
         this.matricule = matricule;
         this.nom = nom;
         this.prenom = prenom;
@@ -111,14 +130,14 @@ public class Coureur {
      * getter date de naissance
      * @return dateNaiss
      */
-    public Date getDateNaiss() {
+    public LocalDate getDateNaiss() {
         return dateNaiss;
     }
     /**
      * setter date de naissance
      * @param dateNaiss
      */
-    public void setDateNaiss(Date dateNaiss) {
+    public void setDateNaiss(LocalDate dateNaiss) {
         this.dateNaiss = dateNaiss;
     }
     /**

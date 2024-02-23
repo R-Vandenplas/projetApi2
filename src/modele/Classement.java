@@ -1,6 +1,7 @@
 package modele;
 
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -22,7 +23,7 @@ public class Classement {
     /**
      * gain du coureur
      */
-    private float gain;
+    private BigDecimal gain;
     /**
      * coureur
      */
@@ -34,7 +35,7 @@ public class Classement {
      * @param gain
      * @param coureur
      */
-    public Classement(int place, float gain, Coureur coureur) {
+    public Classement(int place, BigDecimal gain, Coureur coureur) {
         this.place = place;
         this.gain = gain;
         this.coureur = coureur;
@@ -58,14 +59,14 @@ public class Classement {
      * getter gain
      * @return gain
      */
-    public float getGain() {
+    public BigDecimal getGain() {
         return gain;
     }
     /**
      * setter gain
      * @param gain
      */
-    public void setGain(float gain) {
+    public void setGain(BigDecimal gain) {
         this.gain = gain;
     }
     /**

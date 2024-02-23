@@ -1,5 +1,6 @@
 package modele;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -31,7 +32,7 @@ public class Etape {
     /**
      * date de l'etape
      */
-    private Date dateEtape;
+    private LocalDate dateEtape;
     /**
      * ville de depart
      */
@@ -55,7 +56,7 @@ public class Etape {
      * @param villeArrivee
      * @param course
      */
-    public Etape(int numero, String description, int km, Date dateEtape, Ville villeDepart, Ville villeArrivee, Course course) {
+    public Etape(int numero, String description, int km, LocalDate dateEtape, Ville villeDepart, Ville villeArrivee, Course course) {
         this.numero = numero;
         this.description = description;
         this.km = km;
@@ -111,14 +112,14 @@ public class Etape {
      * getter dateEtape
      * @return dateEtape
      */
-    public Date getDateEtape() {
+    public LocalDate getDateEtape() {
         return dateEtape;
     }
     /**
      * setter dateEtape
      * @param dateEtape
      */
-    public void setDateEtape(Date dateEtape) {
+    public void setDateEtape(LocalDate dateEtape) {
         this.dateEtape = dateEtape;
     }
     /**

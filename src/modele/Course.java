@@ -1,10 +1,9 @@
 package modele;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.util.*;
+
 /**
  * classe Course
  * @author Romain Vandenplas
@@ -30,11 +29,11 @@ public class Course {
     /**
      * date de debut de la course
      */
-    private Date dateDebut;
+    private LocalDate dateDebut;
     /**
      * date de fin de la course
      */
-    private Date dateFin;
+    private LocalDate dateFin;
     /**
      * kilometrage total de la course
      */
@@ -43,11 +42,11 @@ public class Course {
     /**
      * liste des classements
      */
-    List<Classement> classement;
+    List<Classement> classement = new ArrayList<>();
     /**
      * liste des etapes
      */
-    List<Etape> etapes;
+    List<Etape> etapes= new ArrayList<>();
     //<--------------constructeurs--------------->
     /**
      * constructeur de la classe course
@@ -57,7 +56,7 @@ public class Course {
      * @param dateFin
      * @param kmTotal
      */
-    public Course(String nom, BigDecimal priceMoney, Date dateDebut, Date dateFin, int kmTotal) {
+    public Course(String nom, BigDecimal priceMoney, LocalDate dateDebut, LocalDate dateFin, int kmTotal) {
         this.nom = nom;
         this.priceMoney = priceMoney;
         this.dateDebut = dateDebut;
@@ -73,7 +72,7 @@ public class Course {
      * @param dateFin
      * @param kmTotal
      */
-    public Course(int id, String nom, BigDecimal priceMoney, Date dateDebut, Date dateFin, int kmTotal) {
+    public Course(int id, String nom, BigDecimal priceMoney, LocalDate dateDebut, LocalDate dateFin, int kmTotal) {
         this.id = id;
         this.nom = nom;
         this.priceMoney = priceMoney;
@@ -115,28 +114,28 @@ public class Course {
      * getter dateDebut
      * @return dateDebut
      */
-    public Date getDateDebut() {
+    public LocalDate getDateDebut() {
         return dateDebut;
     }
     /**
      * setter dateDebut
      * @param dateDebut
      */
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(LocalDate dateDebut) {
         this.dateDebut = dateDebut;
     }
     /**
      * getter dateFin
      * @return dateFin
      */
-    public Date getDateFin() {
+    public LocalDate getDateFin() {
         return dateFin;
     }
     /**
      * setter dateFin
      * @param dateFin
      */
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(LocalDate dateFin) {
         this.dateFin = dateFin;
     }
     /**
@@ -217,7 +216,11 @@ public class Course {
      * @return gain total de la course
      */
     public BigDecimal gainTotal(){
-        return priceMoney;
+        BigDecimal gainTotal = new BigDecimal(0);
+        for(Classement c : classement){
+            gainTotal = gainTotal.add(c.getGain());
+        }
+        return gainTotal;
     }
     /**
      * Retourne le coureur vainqueur en cherchant dans le classement le coureur avec la place 1
@@ -237,26 +240,32 @@ public class Course {
      * @param c coureur à ajouter
      */
     public void addCoureur(Coureur c){
-        classement.add(new Classement(0,0,c));
+        classement.add(new Classement(0,new BigDecimal(0),c));
     }
     /**
-     * Supprime un coureur du classement en comparant les coureurs avec equals
+     * Supprime un coureur et son classement de la liste des classements avec un iterator
      * @param c coureur à supprimer
      */
     public void supCoureur(Coureur c){
-        for(Classement cl : classement){
-            if(cl.getCoureur().equals(c)){
-                classement.remove(cl);
+        Iterator<Classement> iterator = classement.iterator();
+        while (iterator.hasNext()) {
+            Classement cl = iterator.next();
+            if (cl.getCoureur().equals(c)) {
+                iterator.remove();
             }
         }
     }
+
+
+
     /**
      * Permet de donner le classement d'un coureur avec sa place et son gain si il n'a pas déjà de classement
+     * Attention le equals etant sur l'id si l'objet coureur n'a pas d'id la méthode ne fonctionnera pas
      * @param c coureur à modifier
      * @param place nouvelle place
      * @param gain nouveau gain
      */
-    public void resultat(Coureur c, int place, float gain){
+    public void resultat(Coureur c, int place, BigDecimal gain){
         for(Classement cl : classement){
             if(cl.getCoureur().equals(c)){
                 if(cl.getPlace()==0){
@@ -271,11 +280,12 @@ public class Course {
     }
     /**
      * Permet de modifier le classement d'un coureur avec sa place et son gain, le coureur doit déjà avoir un classement
+     * Attention le equals etant sur l'id si l'objet coureur n'a pas d'id la méthode ne fonctionnera pas
      * @param c coureur à modifier
      * @param place nouvelle place
      * @param gain nouveau gain
      */
-    public void modif(Coureur c, int place, float gain){
+    public void modif(Coureur c, int place, BigDecimal gain){
         for(Classement cl : classement){
             if(cl.getCoureur().equals(c)){
                 if(cl.getPlace()!=0){
@@ -298,15 +308,18 @@ public class Course {
         getEtapes().add(e);
     }
     /**
-     * Supprime une étape de la liste des étapes en comparant les étapes avec equals
+     * Supprime une étape de la liste des étapes avec un iterator
      * @param e étape à supprimer
      */
     public void supEtape(Etape e){
-        for(Etape et : etapes){
-            if(et.equals(e)){
-                etapes.remove(et);
+        Iterator<Etape> iterator = etapes.iterator();
+        while (iterator.hasNext()) {
+            Etape et = iterator.next();
+            if (et.equals(e)) {
+                iterator.remove();
             }
         }
+
     }
     /**
      * Retourne la liste des villes en affichant une seule fois chaque ville
