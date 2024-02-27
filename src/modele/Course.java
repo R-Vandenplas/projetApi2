@@ -266,17 +266,23 @@ public class Course {
      * @param gain nouveau gain
      */
     public void resultat(Coureur c, int place, BigDecimal gain){
-        for(Classement cl : classement){
-            if(cl.getCoureur().equals(c)){
-                if(cl.getPlace()==0){
-                    cl.setPlace(place);
-                    cl.setGain(gain);
-                }
-                else
-                    throw new RuntimeException("Le coureur a déjà un classement");
+        if(classement.contains(c)){
+            for(Classement cl : classement){
+                if(cl.getCoureur().equals(c)){
+                    if(cl.getPlace()==0){
+                        cl.setPlace(place);
+                        cl.setGain(gain);
+                    }
+                    else
+                        throw new RuntimeException("Le coureur a déjà un classement");
 
+                }
             }
         }
+        else {
+            throw new RuntimeException("Le coureur n'est pas inscrit à la course");
+        }
+
     }
     /**
      * Permet de modifier le classement d'un coureur avec sa place et son gain, le coureur doit déjà avoir un classement
@@ -286,17 +292,23 @@ public class Course {
      * @param gain nouveau gain
      */
     public void modif(Coureur c, int place, BigDecimal gain){
-        for(Classement cl : classement){
-            if(cl.getCoureur().equals(c)){
-                if(cl.getPlace()!=0){
-                    cl.setPlace(place);
-                    cl.setGain(gain);
-                }
-                else
-                    throw new RuntimeException("Le coureur n'a pas de classement");
+        if(classement.contains(c)){
+            for(Classement cl : classement){
+                if(cl.getCoureur().equals(c)){
+                    if(cl.getPlace()!=0){
+                        cl.setPlace(place);
+                        cl.setGain(gain);
+                    }
+                    else
+                        throw new RuntimeException("Le coureur n'a pas de classement");
 
+                }
             }
         }
+        else{
+            throw new RuntimeException("Le coureur n'est pas inscrit à la course");
+        }
+
     }
 
 
