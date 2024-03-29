@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="correction du premier dépot">
+    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="correction du deuxième dépot">
+      <change afterPath="$PROJECT_DIR$/src/GestionClasse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/myconnections/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/myconnections/ODBCConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetApi2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projetApi2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,14 +46,30 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/libjava/ojdbc8.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
+    ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GestionClasse">
+    <configuration name="GestionClasse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GestionClasse" />
+      <module name="projetApi2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="projetApi2" />
@@ -51,8 +77,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SQL01b" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SQL01b" />
+      <module name="projetApi2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GestionClasse" />
+        <item itemvalue="Application.SQL01b" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -71,7 +106,10 @@
       <workItem from="1708519183914" duration="1695000" />
       <workItem from="1708695982416" duration="1358000" />
       <workItem from="1708703439660" duration="650000" />
-      <workItem from="1709019341236" duration="380000" />
+      <workItem from="1709019341236" duration="1072000" />
+      <workItem from="1710492690051" duration="5600000" />
+      <workItem from="1711546895822" duration="106000" />
+      <workItem from="1711700604574" duration="4484000" />
     </task>
     <task id="LOCAL-00001" summary="ajout des id">
       <option name="closed" value="true" />
@@ -97,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708703932258</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="correction du deuxième dépot">
+      <option name="closed" value="true" />
+      <created>1709019979587</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709019979587</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +164,7 @@
     <MESSAGE value="ajout des id" />
     <MESSAGE value="ajout des methodes demandées" />
     <MESSAGE value="correction du premier dépot" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction du premier dépot" />
+    <MESSAGE value="correction du deuxième dépot" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction du deuxième dépot" />
   </component>
 </project>
