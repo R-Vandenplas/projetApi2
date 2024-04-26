@@ -1,4 +1,4 @@
-package modele;
+package model;
 
 import java.util.Objects;
 
@@ -62,6 +62,20 @@ public class Ville {
         this.pays = pays;
     }
     //<--------------getters et setters--------------->
+    /**
+     * getter id
+     * @return id
+     */
+    public int getId() {
+        return id;
+    }
+    /**
+     * setter id
+     * @param id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
     /**
      * getter nom
      * @return nom
@@ -138,5 +152,16 @@ public class Ville {
     @Override
     public int hashCode() {
         return Objects.hash( id);
+    }
+
+    @Override
+    public String toString() {
+        return "Ville{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", pays='" + pays + '\'' +
+                '}';
     }
 }

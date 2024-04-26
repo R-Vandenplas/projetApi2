@@ -1,7 +1,6 @@
-package modele;
+package model;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -65,7 +64,26 @@ public class Etape {
         this.villeArrivee = villeArrivee;
         this.course = course;
     }
+    public Etape(int id, int numero, String description, int km, LocalDate dateEtape, Ville villeDepart, Ville villeArrivee, Course course) {
+        this.id = id;
+        this.numero = numero;
+        this.description = description;
+        this.km = km;
+        this.dateEtape = dateEtape;
+        this.villeDepart = villeDepart;
+        this.villeArrivee = villeArrivee;
+        this.course = course;
+    }
     //<--------------getters et setters--------------->
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     /**
      * getter numero
      * @return numero

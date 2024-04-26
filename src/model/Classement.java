@@ -1,4 +1,4 @@
-package modele;
+package model;
 
 
 import java.math.BigDecimal;
@@ -40,7 +40,22 @@ public class Classement {
         this.gain = gain;
         this.coureur = coureur;
     }
+    public Classement(int id, int place, BigDecimal gain, Coureur coureur) {
+        this.id = id;
+        this.place = place;
+        this.gain = gain;
+        this.coureur = coureur;
+    }
     //<--------------getters et setters--------------->
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     /**
      * getter place
      * @return place

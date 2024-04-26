@@ -1,14 +1,11 @@
 package designpatterns.composite;
 
-import modele.Classement;
-import modele.Coureur;
-import modele.Etape;
-import modele.Ville;
+import model.Classement;
+import model.Etape;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 

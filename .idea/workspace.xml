@@ -4,19 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="CRUD">
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/builder/Coureur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/builder/TestBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/composite/Championnat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/composite/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/composite/Element.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/composite/TestComposite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/observer/Coureur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/observer/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/observer/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/observer/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/designpatterns/observer/TestObserver.java" afterDir="false" />
+    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="debut mvc">
+      <change afterPath="$PROJECT_DIR$/src/MVC/Controller/ClassementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Controller/CoureurController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Controller/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Controller/EtapeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Controller/VilleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Gestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/ClassementModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/CoureurModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/CourseModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/DAOClassement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/DAOCoureur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/DAOCourse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/DAOEtape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/DAOVille.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/EtapeModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Model/VilleModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Observer/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/Observer/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/View/ClassementAbstractView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/View/CoureurAbstractView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/View/CoureurViewConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/View/CourseAbstractView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/View/EtapeAbstractView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/View/VilleAbstractView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MVC/View/VilleViewConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Classement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Coureur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Etape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Ville.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilitaires/Utilitaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpatterns/composite/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpatterns/composite/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/designpatterns/observer/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/designpatterns/observer/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Classement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Coureur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Etape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Ville.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,54 +65,76 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2cPZBGiZhxye2qaXnH4IRRJ7tRO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/libjava/ojdbc8.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Romain/OneDrive - HEPH-Condorcet/2eme info/API 2/projetApi2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vandenplas\OneDrive - HEPH-Condorcet\2eme info\API 2\projetApi2\src\MVC\Modele" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="MVC" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="MVC.Observer" />
       <recent name="designpatterns.observer" />
       <recent name="designpatterns.composite" />
       <recent name="designpatterns.builder" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestObserver">
-    <configuration name="GestionClasse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GestionClasse" />
+  <component name="RunManager" selected="Application.Gestion">
+    <configuration name="Gestion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MVC.Gestion" />
       <module name="projetApi2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MVC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQL01b" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SQL01b" />
+    <configuration name="GestionClasse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GestionClasse" />
       <module name="projetApi2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,13 +181,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestObserver" />
+        <item itemvalue="Application.Gestion" />
         <item itemvalue="Application.TestComposite" />
+        <item itemvalue="Application.TestObserver" />
         <item itemvalue="Application.TestBuilder" />
         <item itemvalue="Application.GestionClasse" />
-        <item itemvalue="Application.SQL01b" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SQLScriptSettings">
+    <option name="matrix">
+      <map>
+        <entry key="ORACLE.CreateComplete" value="CreateOrReplace=1" />
+      </map>
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -155,7 +213,20 @@
       <workItem from="1709019341236" duration="1072000" />
       <workItem from="1710492690051" duration="5600000" />
       <workItem from="1711546895822" duration="106000" />
-      <workItem from="1711700604574" duration="14522000" />
+      <workItem from="1711700604574" duration="14757000" />
+      <workItem from="1712308999001" duration="9445000" />
+      <workItem from="1712323161902" duration="45000" />
+      <workItem from="1713511401490" duration="7946000" />
+      <workItem from="1713527611991" duration="991000" />
+      <workItem from="1713612775949" duration="235000" />
+      <workItem from="1713613430881" duration="1293000" />
+      <workItem from="1713614778691" duration="4141000" />
+      <workItem from="1713627696527" duration="495000" />
+      <workItem from="1713628341297" duration="81000" />
+      <workItem from="1713767061209" duration="90000" />
+      <workItem from="1713796303117" duration="4194000" />
+      <workItem from="1713853839882" duration="68000" />
+      <workItem from="1714116771720" duration="332000" />
     </task>
     <task id="LOCAL-00001" summary="ajout des id">
       <option name="closed" value="true" />
@@ -197,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711705792720</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Design patterns">
+      <option name="closed" value="true" />
+      <created>1711720142434</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711720142448</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +299,8 @@
     <MESSAGE value="correction du premier dépot" />
     <MESSAGE value="correction du deuxième dépot" />
     <MESSAGE value="CRUD" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD" />
+    <MESSAGE value="Design patterns" />
+    <MESSAGE value="debut mvc" />
+    <option name="LAST_COMMIT_MESSAGE" value="debut mvc" />
   </component>
 </project>

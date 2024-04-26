@@ -1,4 +1,4 @@
-package modele;
+package model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -81,6 +81,15 @@ public class Course {
         this.kmTotal = kmTotal;
     }
     //<--------------getters & setters--------------->
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     /**
      * getter nom
      * @return nom
@@ -202,7 +211,7 @@ public class Course {
     public int hashCode() {
         return Objects.hash(id);
     }
-    //<------------------methodes développer------------------->
+    //<------------------methodes développées------------------->
 
     /**
      * Retourne la liste des coureurs avec leur place et leur gain

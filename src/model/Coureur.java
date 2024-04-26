@@ -1,7 +1,6 @@
-package modele;
+package model;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 /**
  * classe Coureur
@@ -69,6 +68,15 @@ public class Coureur {
         this.dateNaiss = dateNaiss;
     }
     //<--------------getters et setters--------------->
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     /**
      * getter matricule
      * @return matricule
@@ -160,5 +168,21 @@ public class Coureur {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+    /**
+     * methode toString
+     * @return les informations du coureur
+     */
+
+    @Override
+    public String toString() {
+        return "Coureur{" +
+                "id=" + id +
+                ", matricule='" + matricule + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", nationalite='" + nationalite + '\'' +
+                ", dateNaiss=" + dateNaiss +
+                '}';
     }
 }
