@@ -9,9 +9,9 @@ import java.util.List;
 
 public abstract class DAOCourse extends Subject {
 
-    public abstract Course createCourse(Course course);
-    public abstract Course updateCourse(Course course);
-    public abstract boolean deleteCourse(Course course);
+    public abstract Course create(Course course);
+    public abstract Course update(Course course);
+    public abstract boolean delete(Course course);
     public abstract Course get(int id);
     public abstract List<Course> findAll();
 

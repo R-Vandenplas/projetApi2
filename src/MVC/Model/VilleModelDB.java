@@ -3,10 +3,7 @@ package MVC.Model;
 import model.Ville;
 import myconnections.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,33 +70,17 @@ public class VilleModelDB extends DAOVille {
 
     @Override
     public Ville create(Ville ville) {
-        String query = "insert into APIVILLE(nom, lattitude, longitude, pays) values(?,?,?,?)";
-        String query2 = "select id from APIVILLE where lattitude = ? and longitude = ?";
-        try(PreparedStatement pstm = dbConnect.prepareStatement(query);
-            PreparedStatement pstm2 = dbConnect.prepareStatement(query2);) {
-            pstm.setString(1,ville.getNom());
-            pstm.setDouble(2,ville.getLatitude());
-            pstm.setDouble(3,ville.getLongitude());
-            pstm.setString(4,ville.getPays());
-            int n = pstm.executeUpdate();
-            if(n == 1){
-                pstm2.setDouble(1,ville.getLatitude());
-                pstm2.setDouble(2,ville.getLongitude());
-                ResultSet rs = pstm2.executeQuery();
-                if(rs.next()){
-                    ville.setId(rs.getInt(1));
-                    notifyObservers();
-                    return ville;
-                }
-                else {
-                    System.err.println("record introuvable");
-                    return null;
-                }
-            }
-            else {
-                return null;
-            }
-
+        String query = "CALL  APICREATEVILLE(?,?,?,?,?) ";
+        try (CallableStatement cs = dbConnect.prepareCall(query)) {
+            cs.registerOutParameter(1, Types.INTEGER);
+            cs.setString(2, ville.getNom());
+            cs.setDouble(3, ville.getLatitude());
+            cs.setDouble(4, ville.getLongitude());
+            cs.setString(5, ville.getPays());
+            cs.executeUpdate();
+            int id = cs.getInt(1);
+            ville.setId(id);
+            return ville;
 
         } catch (SQLException e) {
             System.err.println("erreur sql :"+e);

@@ -4,10 +4,7 @@ import model.*;
 import myconnections.DBConnection;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,29 +24,20 @@ public class CourseModelDB extends DAOCourse{
     }
 
     @Override
-    public Course createCourse(Course course) {
-        String query = "insert into COURSE(nom,priceMoney,dateDebut,dateFin,kmTotal) values(?,?,?,?,?)";
-        try(PreparedStatement pstm = dbConnect.prepareStatement(query,PreparedStatement.RETURN_GENERATED_KEYS)) {
-            pstm.setString(1,course.getNom());
-            pstm.setBigDecimal(2,course.getPriceMoney());
-            pstm.setDate(3,java.sql.Date.valueOf(course.getDateDebut()));
-            pstm.setDate(4,java.sql.Date.valueOf(course.getDateFin()));
-            pstm.setInt(5,course.getKmTotal());
-            int n = pstm.executeUpdate();
-            if(n == 0){
-                return null;
+    public Course create(Course course) {
+        String query ="CALL APICREATECOURSE(?,?,?,?,?,?)" ;
+        try (CallableStatement cs = dbConnect.prepareCall(query)) {
+            cs.registerOutParameter(1,Types.INTEGER);
+            cs.setString(2,course.getNom());
+            cs.setBigDecimal(3,course.getPriceMoney());
+            cs.setDate(4,java.sql.Date.valueOf(course.getDateDebut()));
+            cs.setDate(5,java.sql.Date.valueOf(course.getDateFin()));
+            cs.setInt(6,course.getKmTotal());
+            cs.executeUpdate();
+            course.setId(cs.getInt(1));
+            return course;
             }
-            try(ResultSet rs = pstm.getGeneratedKeys()){
-                if(rs.next()){
-                    int id = rs.getInt(1);
-                    course.setId(id);
-                    return course;
-                }
-                else {
-                    return null;
-                }
-            }
-        } catch (SQLException e) {
+        catch (SQLException e) {
             System.err.println("erreur sql :"+e);
 
             return null;
@@ -58,8 +46,8 @@ public class CourseModelDB extends DAOCourse{
     }
 
     @Override
-    public Course updateCourse(Course course) {
-        String query = "update COURSE set nom = ?, priceMoney = ?, dateDebut = ?, dateFin = ?, kmTotal = ? where id = ?";
+    public Course update(Course course) {
+        String query = "update APICOURSE set nom = ?, priceMoney = ?, dateDebut = ?, dateFin = ?, kmTotal = ? where id = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setString(1,course.getNom());
             pstm.setBigDecimal(2,course.getPriceMoney());
@@ -82,8 +70,8 @@ public class CourseModelDB extends DAOCourse{
     }
 
     @Override
-    public boolean deleteCourse(Course course) {
-        String query = "delete from COURSE where id = ?";
+    public boolean delete(Course course) {
+        String query = "delete from APICOURSE where id = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1,course.getId());
             int n = pstm.executeUpdate();
@@ -97,7 +85,7 @@ public class CourseModelDB extends DAOCourse{
 
     @Override
     public Course get(int id) {
-        String query = "select * from COURSE where id = ?";
+        String query = "select * from APICOURSE where id = ?";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1,id);
             ResultSet rs = pstm.executeQuery();
@@ -123,7 +111,7 @@ public class CourseModelDB extends DAOCourse{
 
     @Override
     public List<Course> findAll() {
-        String query = "select * from COURSE";
+        String query = "select * from APICOURSE";
         List<Course> listeCourse = new ArrayList<>();
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             ResultSet rs = pstm.executeQuery();
@@ -146,7 +134,7 @@ public class CourseModelDB extends DAOCourse{
     }
     @Override
     public List<Etape> getEtapes(Course course) {
-        String query = "select * from ETAPE where idCourse = ?";
+        String query = "select * from APIETAPE where idCourse = ?";
         List<Etape> listEtape = new ArrayList<>();
         try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1, course.getId());
@@ -176,7 +164,7 @@ public class CourseModelDB extends DAOCourse{
 
     @Override
     public List<Classement> getClassements(Course course) {
-        String query = "select * from CLASSEMENT where idCourse = ?";
+        String query = "select * from APICLASSEMENT where idCourse = ?";
         List<Classement> listClassement = new ArrayList<>();
         try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
             pstm.setInt(1, course.getId());

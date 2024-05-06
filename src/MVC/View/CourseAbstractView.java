@@ -7,11 +7,11 @@ import model.Course;
 import java.util.List;
 
 public abstract class CourseAbstractView implements Observer {
-    protected CourseController controller;
+    protected CourseController courseController;
     protected List<Course> lc;
 
     public void setController(CourseController controller) {
-        this.controller = controller;
+        this.courseController = controller;
     }
 
     public abstract void affMsg(String msg);

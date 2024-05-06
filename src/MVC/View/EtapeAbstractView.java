@@ -9,11 +9,13 @@ import model.Etape;
 import java.util.List;
 
 public abstract class EtapeAbstractView implements Observer {
-    protected EtapeController controller;
+    protected EtapeController etapeController;
     protected List<Etape> le;
+    protected VilleAbstractView villeView;
+    protected CourseAbstractView courseView;
 
     public void setController(EtapeController controller) {
-        this.controller = controller;
+        this.etapeController = controller;
     }
 
     public abstract void affMsg(String msg);
