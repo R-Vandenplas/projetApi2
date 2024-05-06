@@ -211,6 +211,18 @@ public class Course {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", priceMoney=" + priceMoney +
+                ", dateDebut=" + dateDebut +
+                ", dateFin=" + dateFin +
+                ", kmTotal=" + kmTotal +
+                '}';
+    }
     //<------------------methodes développées------------------->
 
     /**

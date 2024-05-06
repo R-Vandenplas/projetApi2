@@ -2,6 +2,8 @@ package model;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import static utilitaires.Utilitaire.*;
+
 /**
  * classe Coureur
  * @author Romain Vandenplas
@@ -182,7 +184,7 @@ public class Coureur {
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", nationalite='" + nationalite + '\'' +
-                ", dateNaiss=" + dateNaiss +
+                ", dateNaiss= " + getDateFrench(dateNaiss)  +
                 '}';
     }
 }

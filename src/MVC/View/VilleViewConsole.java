@@ -17,7 +17,7 @@ public class VilleViewConsole extends VilleAbstractView{
 
     @Override
     public Ville selectionner() {
-        update(controller.getAll());
+        update(villeController.getAll());
         int nl =  choixElt(lv);
         Ville vi = lv.get(nl-1);
         return vi;
@@ -26,7 +26,7 @@ public class VilleViewConsole extends VilleAbstractView{
 
     @Override
     public void menu() {
-        update(controller.getAll());
+        update(villeController.getAll());
         do {
 
             int ch = choixListe(Arrays.asList("ajout", "retrait", "rechercher", "modifier", "fin"));
@@ -59,21 +59,21 @@ public class VilleViewConsole extends VilleAbstractView{
         double longitude = lireDouble();
         System.out.println("Pays de la Ville:");
         String pays = sc.nextLine();
-        Ville v = controller.addVille(new Ville(nom, latitude, longitude, pays));
+        Ville v = villeController.addVille(new Ville(nom, latitude, longitude, pays));
         if(v!=null) affMsg("création de :"+v);
         else affMsg("erreur de création");
     }
     private void retirer() {
         Ville v = selectionner();
         if(v!=null) {
-            if(controller.removeVille(v)) affMsg("suppression de :"+v);
+            if(villeController.removeVille(v)) affMsg("suppression de :"+v);
             else affMsg("erreur de suppression");
         }
     }
     private void rechercher(){
        System.out.println("id de la ville :");
        int id = lireInt();
-       Ville v =controller.getVilleById(id);
+       Ville v =villeController.getVilleById(id);
          if(v!=null) affMsg("ville trouvée :"+v);
          else affMsg("ville non trouvée");
 
@@ -93,7 +93,7 @@ public class VilleViewConsole extends VilleAbstractView{
             v.setLatitude(latitude);
             v.setLongitude(longitude);
             v.setPays(pays);
-            if(controller.updateVille(v)!=null) affMsg("modification de :"+v);
+            if(villeController.updateVille(v)!=null) affMsg("modification de :"+v);
             else affMsg("erreur de modification");
         }
     }

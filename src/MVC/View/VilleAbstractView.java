@@ -7,11 +7,11 @@ import model.Ville;
 import java.util.List;
 
 public abstract class VilleAbstractView implements Observer {
-    protected VilleController controller;
+    protected VilleController villeController;
     protected List<Ville> lv;
 
     public void setController(VilleController controller) {
-        this.controller = controller;
+        this.villeController = controller;
     }
 
     public abstract void affMsg(String msg);

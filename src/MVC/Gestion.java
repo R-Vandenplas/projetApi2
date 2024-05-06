@@ -1,15 +1,8 @@
 package MVC;
 
-import MVC.Controller.CoureurController;
-import MVC.Controller.VilleController;
-import MVC.Model.CoureurModelDB;
-import MVC.Model.DAOCoureur;
-import MVC.Model.DAOVille;
-import MVC.Model.VilleModelDB;
-import MVC.View.CoureurAbstractView;
-import MVC.View.CoureurViewConsole;
-import MVC.View.VilleAbstractView;
-import MVC.View.VilleViewConsole;
+import MVC.Controller.*;
+import MVC.Model.*;
+import MVC.View.*;
 
 import java.util.Arrays;
 
@@ -24,6 +17,18 @@ public class Gestion {
     private CoureurController cc;
     private CoureurAbstractView cv;
 
+    private DAOEtape em;
+    private EtapeController ec;
+    private EtapeAbstractView ev;
+
+    private DAOCourse com;
+    private CourseController coc;
+    private CourseAbstractView cov;
+
+    private DAOClassement clm;
+    private ClassementController clc;
+    private ClassementAbstractView clv;
+
     public void gestion() {
         vm = new VilleModelDB();
         vv = new VilleViewConsole();
@@ -34,6 +39,23 @@ public class Gestion {
         cv = new CoureurViewConsole();
         cc = new CoureurController(cm, cv);
         cm.addObserver(cv);
+
+        em = new EtapeModelDB();
+        ev = new EtapeViewConsole();
+        ec = new EtapeController(em, ev);
+        em.addObserver(ev);
+
+        com = new CourseModelDB();
+        cov = new CourseViewConsole();
+        coc = new CourseController(com, cov);
+        com.addObserver(cov);
+
+        clm = new ClassementModelDB();
+        clv = new ClassementViewConsole();
+        clc = new ClassementController(clm, clv);
+        clm.addObserver(clv);
+
+
 
         do {
 
@@ -48,9 +70,11 @@ public class Gestion {
                 case 3:
                     return;
                 case 4:
-                    return;
+                    ev.menu();
+                    break;
                 case 5:
-                    return;
+                    cov.menu();
+                    break;
                 case 6:
                     return;
             }
