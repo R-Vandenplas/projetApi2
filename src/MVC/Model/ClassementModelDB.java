@@ -78,6 +78,29 @@ public class ClassementModelDB  extends DAOClassement{
             return null;
         }
     }
+    @Override
+    public Classement updateByCourseIdAndCoureurId(Classement classement, int idCourse) {
+        String query = "update APICLASSEMENT set place = ?, gain = ?, course = ?, coureur = ? where course = ? and coureur = ?";
+        try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
+            pstm.setInt(1,classement.getPlace());
+            pstm.setBigDecimal(2,classement.getGain());
+            pstm.setInt(3,idCourse);
+            pstm.setInt(4,classement.getCoureur().getId());
+            pstm.setInt(5,idCourse);
+            pstm.setInt(6,classement.getCoureur().getId());
+            int n = pstm.executeUpdate();
+            if(n == 0){
+                return null;
+            }
+            else {
+                return classement;
+            }
+        } catch (SQLException e) {
+            System.err.println("erreur sql :"+e);
+
+            return null;
+        }
+    }
 
     @Override
     public boolean delete(Classement classement) {
@@ -122,6 +145,25 @@ public class ClassementModelDB  extends DAOClassement{
         }
 
 
+    }
+    @Override
+    public boolean  deleteByCourseIdAndCoureurId(int idCourse, int idCoureur) {
+        String query = "DELETE from APICLASSEMENT where course = ? and coureur = ?";
+        try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
+            pstm.setInt(1,idCourse);
+            pstm.setInt(2,idCoureur);
+            int n = pstm.executeUpdate();
+            if(n == 0){
+                return false;
+            }
+            else {
+                return true;
+            }
+        } catch (SQLException e) {
+            System.err.println("erreur sql :"+e);
+
+            return false;
+        }
     }
 
     @Override

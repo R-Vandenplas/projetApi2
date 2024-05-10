@@ -49,11 +49,13 @@ public class Gestion {
         cov = new CourseViewConsole();
         coc = new CourseController(com, cov);
         com.addObserver(cov);
+        cov.setCoureurView(cv);
+        cov.setEtapeView(ev);
 
         clm = new ClassementModelDB();
-        clv = new ClassementViewConsole();
-        clc = new ClassementController(clm, clv);
-        clm.addObserver(clv);
+
+
+
 
 
 
@@ -68,7 +70,8 @@ public class Gestion {
                     cv.menu();
                     break;
                 case 3:
-                    return;
+                    clv.menu();
+                    break;
                 case 4:
                     ev.menu();
                     break;

@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="mvc coureur et ville finit">
-      <change afterPath="$PROJECT_DIR$/src/MVC/View/ClassementViewConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MVC/View/CourseViewConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MVC/View/EtapeViewConsole.java" afterDir="false" />
+    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="mvc etape et course">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MVC/Controller/ClassementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Controller/ClassementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Controller/EtapeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Controller/EtapeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MVC/Gestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Gestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Model/CoureurModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/CoureurModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Model/CourseModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/CourseModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Model/DAOCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/DAOCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Model/VilleModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/VilleModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/Model/ClassementModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/ClassementModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/Model/DAOClassement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/DAOClassement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/View/ClassementAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/ClassementAbstractView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/View/ClassementViewConsole.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MVC/View/CourseAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/CourseAbstractView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/View/CourseViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/CourseViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MVC/View/EtapeAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/EtapeAbstractView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/View/VilleAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/VilleAbstractView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/View/VilleViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/VilleViewConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Coureur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Coureur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MVC/View/EtapeViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/EtapeViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Course.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +199,8 @@
       <workItem from="1713853839882" duration="68000" />
       <workItem from="1714116771720" duration="9262000" />
       <workItem from="1714371039223" duration="7155000" />
-      <workItem from="1714982036008" duration="5626000" />
+      <workItem from="1714982036008" duration="10554000" />
+      <workItem from="1715332824817" duration="7436000" />
     </task>
     <task id="LOCAL-00001" summary="ajout des id">
       <option name="closed" value="true" />
@@ -263,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714117338116</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="mvc etape et course">
+      <created>1714997415103</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714997415103</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +291,7 @@
     <MESSAGE value="Design patterns" />
     <MESSAGE value="debut mvc" />
     <MESSAGE value="mvc coureur et ville finit" />
-    <option name="LAST_COMMIT_MESSAGE" value="mvc coureur et ville finit" />
+    <MESSAGE value="mvc etape et course" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvc etape et course" />
   </component>
 </project>

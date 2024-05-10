@@ -376,7 +376,7 @@ public class Course {
      * verifie si tout les coureurs ont un classement différent de 0 donc si ils ont participé à la course
      * @return true ou false true si tout les coureurs ont un classement différent de 0 false si un cours n'a pas de classement
      */
-    public boolean classmentComplet(){
+    public boolean classementComplet(){
         for(Classement c : classement){
             if(c.getPlace() == 0){
                 return false;

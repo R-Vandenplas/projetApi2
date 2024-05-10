@@ -8,11 +8,11 @@ import model.Classement;
 import java.util.List;
 
 public abstract class ClassementAbstractView implements Observer {
-    protected ClassementController controller;
+    protected ClassementController classementController;
     protected List<Classement> lc;
 
     public void setController(ClassementController controller) {
-        this.controller = controller;
+        this.classementController = controller;
     }
 
     public abstract void affMsg(String msg);

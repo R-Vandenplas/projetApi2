@@ -1,6 +1,5 @@
 package MVC.View;
 
-import MVC.Controller.VilleController;
 import model.Course;
 import model.Etape;
 import model.Ville;
@@ -23,7 +22,11 @@ public class EtapeViewConsole extends EtapeAbstractView{
 
     @Override
     public Etape selectionner() {
-        return null;
+
+        update(etapeController.getAll());
+        int nl =  choixElt(le);
+        Etape e = le.get(nl-1);
+        return e;
     }
 
     @Override
@@ -52,7 +55,8 @@ public class EtapeViewConsole extends EtapeAbstractView{
 
     }
 
-    private void ajouter() {
+    @Override
+    public void ajouter() {
         System.out.println("Numéro de l'étape:");
         int numero = sc.nextInt();
         System.out.println("Date de l'étape:");

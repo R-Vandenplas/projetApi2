@@ -24,6 +24,8 @@ public abstract class EtapeAbstractView implements Observer {
 
     public abstract void menu();
 
+    public abstract void ajouter();
+
     public abstract void affList(List l);
     @Override
     public void update(List l) {

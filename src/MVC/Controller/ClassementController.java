@@ -3,6 +3,7 @@ package MVC.Controller;
 import MVC.Model.DAOClassement;
 import MVC.View.ClassementAbstractView;
 import model.Classement;
+import model.Coureur;
 import model.Course;
 
 import java.util.List;
@@ -31,6 +32,14 @@ public class ClassementController {
     }
     public Classement getClassementById(int id){
         return model.get(id);
+    }
+
+    public boolean removeClassementByCourseIdAndCoureurId(Course course, Coureur coureur){
+        return model.deleteByCourseIdAndCoureurId(course.getId(), coureur.getId());
+    }
+
+    public Classement updateClassementByCourseIdAndCoureurId(Classement classement, Course course){
+        return model.updateByCourseIdAndCoureurId(classement, course.getId());
     }
 
 }
