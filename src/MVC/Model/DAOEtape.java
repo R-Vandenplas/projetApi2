@@ -14,6 +14,5 @@ public abstract class DAOEtape extends Subject {
     public abstract List<Etape> findAll();
 
 
-
-
+    public abstract List<Etape> findByCourseId(int courseId);
 }

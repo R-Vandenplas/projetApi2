@@ -6,10 +6,7 @@ import model.Course;
 import myconnections.DBConnection;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class ClassementModelDB  extends DAOClassement{
@@ -29,31 +26,24 @@ public class ClassementModelDB  extends DAOClassement{
 
     @Override
     public Classement create(Classement classement,Course course){
-        String query = "insert into APICLASSEMENT(place,gain,course,coureur) values(?,?,?,?)";
-        try(PreparedStatement pstm = dbConnect.prepareStatement(query,PreparedStatement.RETURN_GENERATED_KEYS)) {
-            pstm.setInt(1,classement.getPlace());
-            pstm.setBigDecimal(2,classement.getGain());
-            pstm.setInt(3,course.getId());
-            pstm.setInt(4,classement.getCoureur().getId());
-            int n = pstm.executeUpdate();
-            if(n == 0){
-                return null;
-            }
-            try(ResultSet rs = pstm.getGeneratedKeys()){
-                if(rs.next()){
-                    int id = rs.getInt(1);
-                    classement.setId(id);
-                    return classement;
-                }
-                else {
-                    return null;
-                }
-            }
+        String query = "CALL APICREATECLASSEMENT(?,?,?,?,?)";
+        try(CallableStatement cs = dbConnect.prepareCall(query)){
+            cs.registerOutParameter(1,Types.INTEGER);
+            cs.setInt(2,classement.getPlace());
+            cs.setBigDecimal(3,classement.getGain());
+            cs.setInt(4,course.getId());
+            cs.setInt(5,classement.getCoureur().getId());
+            cs.executeUpdate();
+            int id = cs.getInt(1);
+            classement.setId(id);
+            return classement;
+
         } catch (SQLException e) {
             System.err.println("erreur sql :"+e);
 
             return null;
         }
+
     }
 
     @Override
@@ -167,6 +157,31 @@ public class ClassementModelDB  extends DAOClassement{
     }
 
     @Override
+    public List<Classement> findByCourseId(int courseId) {
+String query = "select * from APICLASSEMENT where course = ?";
+        try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
+            pstm.setInt(1,courseId);
+            ResultSet rs = pstm.executeQuery();
+            List<Classement> listeClassement = new java.util.ArrayList<>();
+            while(rs.next()){
+                int id = rs.getInt(1);
+                int place = rs.getInt(2);
+                BigDecimal gain = rs.getBigDecimal(3);
+                int idcoureur = rs.getInt(5);
+                Coureur coureur = coureurModelDB.get(idcoureur);
+                Classement classement = new Classement(id,place,gain,coureur);
+                listeClassement.add(classement);
+            }
+            return listeClassement;
+        } catch (SQLException e) {
+            System.err.println("erreur sql :"+e);
+
+            return null;
+        }
+
+    }
+
+    @Override
     public List<Classement> findAll() {
         String query = "select * from APICLASSEMENT";
         try(PreparedStatement pstm = dbConnect.prepareStatement(query)) {
@@ -190,6 +205,7 @@ public class ClassementModelDB  extends DAOClassement{
 
 
     }
+
 
     @Override
     public List getNotification() {

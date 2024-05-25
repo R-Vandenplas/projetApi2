@@ -12,8 +12,8 @@ public abstract class CourseAbstractView implements Observer {
     protected CourseController courseController;
     protected List<Course> lc;
 
-    protected CoureurAbstractView courv;
-    protected EtapeAbstractView etav;
+    protected CoureurAbstractView coureurView;
+    protected EtapeAbstractView etapeView;
 
     protected ClassementController classementController;
     protected EtapeController etapeController;
@@ -23,11 +23,18 @@ public abstract class CourseAbstractView implements Observer {
     }
 
     public void setCoureurView(CoureurAbstractView courv) {
-        this.courv = courv;
+        this.coureurView = courv;
     }
 
     public void setEtapeView(EtapeAbstractView etav) {
-        this.etav = etav;
+        this.etapeView = etav;
+    }
+
+    public void setClassementController(ClassementController controller) {
+        this.classementController = controller;
+    }
+    public void setEtapeController(EtapeController controller) {
+        this.etapeController = controller;
     }
 
     public abstract void affMsg(String msg);

@@ -152,6 +152,38 @@ public class EtapeModelDB extends DAOEtape {
     }
 
     @Override
+    public List<Etape> findByCourseId(int courseId) {
+        String query = "select * from APIETAPE where course = ?";
+        List<Etape> listEtape = new ArrayList<>();
+        try (PreparedStatement pstm = dbConnect.prepareStatement(query)) {
+            pstm.setInt(1, courseId);
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                int numero = rs.getInt(2);
+                LocalDate date = rs.getDate(3).toLocalDate();
+                int km = rs.getInt(4);
+                String description = rs.getString(5);
+                int idVilleDepart = rs.getInt(6);
+                int idVilleArrivee = rs.getInt(7);
+                int idCourse = rs.getInt(8);
+
+                Ville villeDepart = villeModelDB.get(idVilleDepart);
+                Ville villeArrivee = villeModelDB.get(idVilleArrivee);
+                Course course = courseModelDB.get(idCourse);
+
+                Etape etape = new Etape(id, numero, description, km, date, villeDepart, villeArrivee, course);
+                listEtape.add(etape);
+            }
+            return listEtape;
+        } catch (SQLException e) {
+            System.err.println("erreur sql :" + e);
+            return null;
+        }
+
+    }
+
+    @Override
     public List getNotification() {
         return findAll();
     }

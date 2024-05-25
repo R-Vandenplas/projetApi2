@@ -21,4 +21,6 @@ public abstract class DAOClassement extends Subject {
 
         public abstract boolean deleteByCourseIdAndCoureurId(int courseId, int coureurId);
 
+        public abstract List<Classement> findByCourseId(int courseId);
+
 }

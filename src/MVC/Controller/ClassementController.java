@@ -41,5 +41,8 @@ public class ClassementController {
     public Classement updateClassementByCourseIdAndCoureurId(Classement classement, Course course){
         return model.updateByCourseIdAndCoureurId(classement, course.getId());
     }
+    public List<Classement> getAllByCourse(int courseId){
+        return model.findByCourseId(courseId);
+    }
 
 }

@@ -121,4 +121,17 @@ public class Classement {
     public int hashCode() {
         return Objects.hash(id);
     }
+    /**
+     * methode toString
+     * @return toString
+     */
+    @Override
+    public String toString() {
+        return "Classement{" +
+                "id=" + id +
+                ", place=" + place +
+                ", gain=" + gain +
+                ", coureur=" + coureur +
+                '}';
+    }
 }

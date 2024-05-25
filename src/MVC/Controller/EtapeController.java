@@ -31,4 +31,7 @@ public class EtapeController {
     public Etape getEtapeById(int id){
         return model.get(id);
     }
+    public List<Etape> getAllByCourse(int courseId){
+        return model.findByCourseId(courseId);
+    }
 }
