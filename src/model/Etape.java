@@ -203,4 +203,21 @@ public class Etape {
     public int hashCode() {
         return Objects.hash(id);
     }
+    /**
+     * methode toString
+     * @return chaine de caractere
+     */
+    @Override
+    public String toString() {
+        return "Etape{" +
+                "id=" + id +
+                ", numero=" + numero +
+                ", description='" + description + '\'' +
+                ", km=" + km +
+                ", dateEtape=" + dateEtape +
+                ", villeDepart=" + villeDepart +
+                ", villeArrivee=" + villeArrivee +
+                ", course=" + course +
+                '}';
+    }
 }

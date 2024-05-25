@@ -18,6 +18,13 @@ public abstract class EtapeAbstractView implements Observer {
         this.etapeController = controller;
     }
 
+    public void setVilleView (VilleAbstractView view){
+        this.villeView = view;
+    }
+    public void setCourseView(CourseAbstractView view){
+        this.courseView = view;
+    }
+
     public abstract void affMsg(String msg);
 
     public abstract Etape selectionner();

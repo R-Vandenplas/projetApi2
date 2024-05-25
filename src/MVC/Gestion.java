@@ -30,6 +30,12 @@ public class Gestion {
     private ClassementAbstractView clv;
 
     public void gestion() {
+        clm = new ClassementModelDB();
+
+        com = new CourseModelDB();
+        cov = new CourseViewConsole();
+        coc = new CourseController(com, cov);
+
         vm = new VilleModelDB();
         vv = new VilleViewConsole();
         vc = new VilleController(vm, vv);
@@ -44,15 +50,15 @@ public class Gestion {
         ev = new EtapeViewConsole();
         ec = new EtapeController(em, ev);
         em.addObserver(ev);
+        ev.setVilleView(vv);
+        ev.setCourseView(cov);
 
-        com = new CourseModelDB();
-        cov = new CourseViewConsole();
-        coc = new CourseController(com, cov);
+
         com.addObserver(cov);
         cov.setCoureurView(cv);
         cov.setEtapeView(ev);
 
-        clm = new ClassementModelDB();
+
 
 
 
@@ -61,7 +67,7 @@ public class Gestion {
 
         do {
 
-            int ch = choixListe(Arrays.asList("Ville", "Coureur", "Classement", "Etape", "Course", "fin"));
+            int ch = choixListe(Arrays.asList("Ville", "Coureur",  "Etape", "Course", "fin"));
             switch (ch) {
                 case 1:
                     vv.menu();
@@ -70,15 +76,12 @@ public class Gestion {
                     cv.menu();
                     break;
                 case 3:
-                    clv.menu();
-                    break;
-                case 4:
                     ev.menu();
                     break;
-                case 5:
+                case 4:
                     cov.menu();
                     break;
-                case 6:
+                case 5:
                     return;
             }
         } while (true);

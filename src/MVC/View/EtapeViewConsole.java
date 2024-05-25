@@ -58,11 +58,11 @@ public class EtapeViewConsole extends EtapeAbstractView{
     @Override
     public void ajouter() {
         System.out.println("Numéro de l'étape:");
-        int numero = sc.nextInt();
+        int numero = lireInt();
         System.out.println("Date de l'étape:");
         LocalDate date = lecDate();
         System.out.println("Kilométrage de l'étape:");
-        int km = sc.nextInt();
+        int km = lireInt();
         System.out.println("Description de l'étape:");
         String description = sc.nextLine();
         System.out.println("Ville de départ de l'étape:");
@@ -71,7 +71,9 @@ public class EtapeViewConsole extends EtapeAbstractView{
         Ville VilleArrivee =villeView.selectionner();
         System.out.println("Course de l'étape:");
         Course Course = courseView.selectionner();
-        etapeController.addEtape(new Etape( numero, description, km, date, VilleDepart,VilleArrivee, Course));
+        Etape e =etapeController.addEtape(new Etape( numero, description, km, date, VilleDepart,VilleArrivee, Course));
+        if(e != null) affMsg("ajout de :"+e);
+        else affMsg("erreur d'ajout");
     }
     private void retirer() {
         Etape e = selectionner();
@@ -83,7 +85,7 @@ public class EtapeViewConsole extends EtapeAbstractView{
 
     private void rechercher() {
         System.out.println("Id de l'étape:");
-        int id = sc.nextInt();
+        int id = lireInt();
         Etape e = etapeController.getEtapeById(id);
         if(e!=null) affMsg("recherche de :"+e);
         else affMsg("erreur de recherche");
@@ -93,11 +95,11 @@ public class EtapeViewConsole extends EtapeAbstractView{
         Etape e = selectionner();
         if(e!=null) {
             System.out.println("Numéro de l'étape:");
-            int numero = sc.nextInt();
+            int numero = lireInt();
             System.out.println("Date de l'étape:");
             LocalDate date = lecDate();
             System.out.println("Kilométrage de l'étape:");
-            int km = sc.nextInt();
+            int km = lireInt();
             System.out.println("Description de l'étape:");
             String description = sc.nextLine();
             System.out.println("Ville de départ de l'étape:");

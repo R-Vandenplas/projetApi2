@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="mvc etape et course">
+    <list default="true" id="d5dd2619-d9d9-4fdc-a415-d5334caa6312" name="Changes" comment="mvc course special debut">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Controller/ClassementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Controller/ClassementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MVC/Gestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Gestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Model/ClassementModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/ClassementModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/Model/DAOClassement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/Model/DAOClassement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/View/ClassementAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/ClassementAbstractView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/View/ClassementViewConsole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/View/CourseAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/CourseAbstractView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MVC/View/CourseViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/CourseViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MVC/View/EtapeAbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/EtapeAbstractView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MVC/View/EtapeViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MVC/View/EtapeViewConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Etape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Etape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilitaires/Utilitaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilitaires/Utilitaire.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +194,14 @@
       <workItem from="1714116771720" duration="9262000" />
       <workItem from="1714371039223" duration="7155000" />
       <workItem from="1714982036008" duration="10554000" />
-      <workItem from="1715332824817" duration="7436000" />
+      <workItem from="1715332824817" duration="8382000" />
+      <workItem from="1715671745216" duration="79000" />
+      <workItem from="1715844952767" duration="565000" />
+      <workItem from="1716018580068" duration="1173000" />
+      <workItem from="1716377941443" duration="182000" />
+      <workItem from="1716473165963" duration="998000" />
+      <workItem from="1716630654363" duration="1255000" />
+      <workItem from="1716643251926" duration="1090000" />
     </task>
     <task id="LOCAL-00001" summary="ajout des id">
       <option name="closed" value="true" />
@@ -265,7 +266,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714997415103</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="mvc course special debut">
+      <created>1715342331932</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715342331932</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mvc course special debut">
+      <created>1715342350103</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715342350103</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +307,7 @@
     <MESSAGE value="debut mvc" />
     <MESSAGE value="mvc coureur et ville finit" />
     <MESSAGE value="mvc etape et course" />
-    <option name="LAST_COMMIT_MESSAGE" value="mvc etape et course" />
+    <MESSAGE value="mvc course special debut" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvc course special debut" />
   </component>
 </project>

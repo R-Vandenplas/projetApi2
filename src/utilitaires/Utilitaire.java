@@ -52,7 +52,7 @@ public class Utilitaire {
 
         } while(true);
     }
-    public static int choixListe(List l){
+    public static int    choixListe(List l){
         affListe(l);
         return choixElt(l);
     }
